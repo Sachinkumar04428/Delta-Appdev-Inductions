@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
     Button dod ;
     Button death;
     TextView label ;
-    int age;
+    int age = -1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,9 +24,6 @@ public class MainActivity extends AppCompatActivity {
         death = (Button)findViewById(R.id.btn_death);
         label = (TextView)findViewById(R.id.label);
 
-        if(!age_saved){
-            label.setText(getResources().getText(R.string.instruct_save_age));
-        }
         dod.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

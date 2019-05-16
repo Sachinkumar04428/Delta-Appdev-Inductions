@@ -6,6 +6,9 @@
     <string name='save_age'>Save Age</string>
     <string name='hint_enter_guess'>Enter your Guess</string>
     <string name='check_guess'>Check Guess</string>
-    <string name="instruct_save_age">No Age has been saved to Guess. Please save age before guessing!.</string>
+    <string name="instruct_save_age_port">No Age is saved to Guess.\n Please save age before guessing!</string>
+    <string name="instruct_save_age_land">No Age is saved to Guess. Please save age before guessing!</string>
     <string name="instruct_guess_age">You can move to guess age!</string>
+    <string name="chances_left">You have 7 chances left</string>
+    <string name="lost">You Lost!\n Better Luck next time.</string>
 </resources>

@@ -18,15 +18,26 @@ public class EnterAgeActivity extends AppCompatActivity {
         final EditText enterAge = (EditText)findViewById(R.id.enterAge);
         final Button saveAge = (Button)findViewById(R.id.saveAge);
 
+
+
         saveAge.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 int age = -1;
-                String string_age = enterAge.getText().toString();
-                if(string_age!=null) {
+                String stringAge = null;
+                try {
+                    stringAge = enterAge.getText().toString();
+                }catch(Exception e){
 
-                    age = Integer.parseInt(string_age);
+                    Toast.makeText(EnterAgeActivity.this,
+                            "Please enter age",
+                            Toast.LENGTH_SHORT).show();
+                }
+
+                if(stringAge!=null) {
+
+                    age = Integer.parseInt(stringAge);
                     if(age>0 && age<=100) {
 
                         Intent intent = new Intent(EnterAgeActivity.this, MainActivity.class);

@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Death Time</string>
+    <string name="Daughter_of_death">Daughter of Death</string>
+    <string name="Death">Death</string>
+    <string name='hint_enter_age'>Enter Age</string>
+    <string name='save_age'>Save Age</string>
+    <string name='hint_enter_guess'>Enter your Guess</string>
+    <string name='check_guess'>Check Guess</string>
+    <string name="instruct_save_age">No Age has been saved to Guess. Please save age before guessing!.</string>
+    <string name="instruct_guess_age">You can move to guess age!</string>
+</resources>

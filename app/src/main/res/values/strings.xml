@@ -2,13 +2,36 @@
     <string name="app_name">Death Time</string>
     <string name="Daughter_of_death">Daughter of Death</string>
     <string name="Death">Death</string>
+
     <string name='hint_enter_age'>Enter Age</string>
     <string name='save_age'>Save Age</string>
     <string name='hint_enter_guess'>Enter your Guess</string>
     <string name='check_guess'>Check Guess</string>
+
     <string name="instruct_save_age_port">No Age is saved to Guess.\n Please save age before guessing!</string>
     <string name="instruct_save_age_land">No Age is saved to Guess. Please save age before guessing!</string>
     <string name="instruct_guess_age">You can move to guess age!</string>
+
     <string name="chances_left">You have 7 chances left</string>
     <string name="lost">You Lost!\n Better Luck next time.</string>
+    <string name="won">Your nailed it! \n Your guess was correct</string>
+    <string name="my_achievements">My Achievements</string>
+
+    <!-- titles for preferences -->
+    <string name="total_try_title">Total times tried</string>
+    <string name="total_correct_title">Total Successful Guesses</string>
+    <string name="total_wrong_title">Total Wrong Guesses</string>
+
+    <!-- keys for preferences -->
+    <string name="total_try_key">total try</string>
+    <string name="total_correct_key">total correct</string>
+    <string name="total_wrong_key">total wrong</string>
+
+    <string name="valid_age">Please Enter a valid age between 1-100</string>
+
+    <string name="home_page">Go to Home Page</string>
+
+    <string name="reset">Reset</string>
+    <string name="save">Save and Go Back</string>
+
 </resources>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AchievementsActivity"
+    android:orientation="vertical"
+    android:background="@drawable/death2">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center|bottom"
+        android:text="@string/my_achievements"
+        android:textSize="40sp"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:layout_margin="16dp"/>
+
+
+    <TextView
+        android:id="@+id/textTotalTry"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:text="@string/total_try_title"
+        android:textColor="@android:color/white"
+        android:textSize="25sp"
+        android:layout_marginTop="16dp"
+        />
+
+    <TextView
+        android:id="@+id/textTotalCorrect"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:text="@string/total_correct_title"
+        android:textColor="@android:color/holo_green_light"
+        android:textSize="25sp"
+        />
+
+
+    <TextView
+        android:id="@+id/textTotalWrong"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:text="@string/total_wrong_title"
+        android:textColor="@android:color/holo_red_light"
+        android:textSize="25sp"
+        android:layout_marginBottom="8dp"
+        />
+
+    <Button
+        android:id="@+id/reset_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:layout_margin="8dp"
+        android:text="@string/reset"
+        android:textSize="10sp"
+        android:onClick="reset"/>
+
+
+
+</LinearLayout>

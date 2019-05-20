@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".EnterAgeActivity"></activity>
+        <activity android:name=".AchievementsActivity"
+                    android:label="@string/my_achievements">
+        </activity>
+        <activity android:name=".EnterAgeActivity" />
         <activity android:name=".GuessingActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

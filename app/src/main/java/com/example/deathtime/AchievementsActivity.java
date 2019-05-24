@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class AchievementsActivity extends AppCompatActivity {
 
@@ -54,14 +55,20 @@ public class AchievementsActivity extends AppCompatActivity {
             text_try.setText(getResources().getString(R.string.total_try_title) + " : 0");
             text_correct.setText(getResources().getString(R.string.total_correct_title) + " : 0");
             text_lost.setText(getResources().getString(R.string.total_wrong_title) + " : 0");
-
-            reset_btn.setText(getResources().getString(R.string.save));
-        }else{
-            Intent intent = new Intent(AchievementsActivity.this, MainActivity.class);
-            intent.putExtra(MainActivity.RESET, true);
-            setResult(RESULT_OK, intent);
-            finish();
         }
     }
 
+
+    @Override
+    public void onBackPressed() {
+
+        Intent intent = new Intent(AchievementsActivity.this, MainActivity.class);
+        if(reset)
+            intent.putExtra(MainActivity.RESET, true);
+        else
+            intent.putExtra(MainActivity.RESET, false);
+
+        setResult(RESULT_OK, intent);
+        finish();
+    }
 }

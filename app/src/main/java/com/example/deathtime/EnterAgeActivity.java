@@ -28,26 +28,26 @@ public class EnterAgeActivity extends AppCompatActivity {
 
                 try {
                     stringAge = enterAge.getText().toString();
+
+                    if(stringAge!=null & stringAge!="") {
+
+                        age = Integer.parseInt(stringAge);
+
+                        if (age >= 0 && age <= 100) {
+
+                            Intent data = new Intent(EnterAgeActivity.this, MainActivity.class);
+                            data.putExtra(GuessingActivity.AGE, age);
+                            setResult(RESULT_OK, data);
+
+                            Toast.makeText(EnterAgeActivity.this, "Your Entered age has been saved", Toast.LENGTH_SHORT).show();
+
+                            finish();
+
+                        }else
+                            Toast.makeText(EnterAgeActivity.this, getResources().getString(R.string.valid_age), Toast.LENGTH_SHORT).show();
+                    }
                 }catch(Exception e){
-                    Toast.makeText(EnterAgeActivity.this, "Please enter age", Toast.LENGTH_SHORT).show();
-                }
-
-                if(stringAge!=null & stringAge!="") {
-
-                    age = Integer.parseInt(stringAge);
-
-                    if (age >= 0 && age <= 100) {
-
-                        Intent data = new Intent(EnterAgeActivity.this, MainActivity.class);
-                        data.putExtra(GuessingActivity.AGE, age);
-                        setResult(RESULT_OK, data);
-
-                        Toast.makeText(EnterAgeActivity.this, "Your Entered age has been saved", Toast.LENGTH_SHORT).show();
-
-                        finish();
-
-                    }else
-                        Toast.makeText(EnterAgeActivity.this, getResources().getString(R.string.valid_age), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(EnterAgeActivity.this, "Please enter correct data", Toast.LENGTH_SHORT).show();
                 }
             }
         });

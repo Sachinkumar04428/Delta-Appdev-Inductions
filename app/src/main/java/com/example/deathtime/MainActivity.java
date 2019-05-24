@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
     String total_correct_key ;
     String total_wrong_key ;
 
+    final String AGE_SAVED="age_saved";
+    final String AGE = "age";
     boolean age_saved;
     int age = -1;
 
@@ -49,9 +52,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+        if(savedInstanceState!=null)
+        {
+            age_saved = savedInstanceState.getBoolean(AGE_SAVED, false);
+            age = savedInstanceState.getInt(AGE, -1);
+        }
+
         dod = (Button)findViewById(R.id.btn_dod);
         death = (Button)findViewById(R.id.btn_death);
         label = (TextView)findViewById(R.id.label);
+
+        if(age_saved)
+            label.setText(getResources().getString(R.string.instruct_guess_age));
 
         //getting default SharedPreferences
         Context context = MainActivity.this;
@@ -67,9 +80,15 @@ public class MainActivity extends AppCompatActivity {
         dod.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent(MainActivity.this, GuessingActivity.class);
-                intent.putExtra(GuessingActivity.AGE, age);
-                startActivityForResult(intent,requestCodeResult);
+                if(age>=0) {
+                    Intent intent = new Intent(MainActivity.this, GuessingActivity.class);
+                    intent.putExtra(GuessingActivity.AGE, age);
+                    startActivityForResult(intent, requestCodeResult);
+                }else{
+                    Toast.makeText(MainActivity.this,
+                            getResources().getString(R.string.instruct_save_age_port),
+                            Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -111,6 +130,9 @@ public class MainActivity extends AppCompatActivity {
         }else if(requestCode == requestCodeResult & resultCode == Activity.RESULT_OK){
 
             String result_key = getResultKey(data.getIntExtra(MainActivity.RESULT, 0));
+            label.setText(getResources().getString(R.string.instruct_save_age_land));
+            age = -1;
+            age_saved = false;
             updateSavedData(result_key, editor);
 
         }else if(requestCode == requestCodeReset & resultCode == Activity.RESULT_OK){
@@ -140,6 +162,12 @@ public class MainActivity extends AppCompatActivity {
             return total_wrong_key;
     }
 
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt(AGE, age);
+        outState.putBoolean(AGE_SAVED, age_saved);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

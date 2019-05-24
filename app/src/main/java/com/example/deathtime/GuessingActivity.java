@@ -85,6 +85,7 @@ public class GuessingActivity extends AppCompatActivity {
 
         try {
             stringAge = guessAge.getText().toString();
+            guessAge.setText("");
             age = Integer.parseInt(stringAge);
 
                 if(age > 0 && age <= 100) {
@@ -98,6 +99,7 @@ public class GuessingActivity extends AppCompatActivity {
                         checkGuess.setText(getResources().getString(R.string.home_page));
                         result = 1; //correct guess
                         backDisabled = true;
+                        guessAge.setEnabled(false);
                         sendIntent(result);
 
                     } else if (chances == 0 && error != 0) {
@@ -105,6 +107,7 @@ public class GuessingActivity extends AppCompatActivity {
                         checkGuess.setText(getResources().getString(R.string.home_page));
                         result = 0; //wrong guess
                         backDisabled = true;
+                        guessAge.setEnabled(false);
                         sendIntent(result);
                     }
             }else

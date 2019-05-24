@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".AchievementsActivity"
     android:orientation="vertical"
-    android:background="@drawable/death2">
+    android:background="@drawable/ghost_port3">
 
     <TextView
         android:layout_width="wrap_content"
@@ -25,14 +25,13 @@
         android:id="@+id/textTotalTry"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="64dp"
         android:layout_weight="1"
         android:gravity="center"
-        android:layout_gravity="center"
         android:text="@string/total_try_title"
         android:textColor="@android:color/white"
-        android:textSize="25sp"
-        android:layout_marginTop="64dp"
-      />
+        android:textSize="25sp" />
 
     <TextView
         android:id="@+id/textTotalCorrect"
@@ -42,7 +41,8 @@
         android:gravity="center"
         android:layout_gravity="center"
         android:text="@string/total_correct_title"
-        android:textColor="@android:color/holo_green_light"
+        android:textColor="@android:color/holo_green_dark"
+        android:textStyle="bold"
         android:textSize="25sp"
         />
 
@@ -56,6 +56,7 @@
         android:layout_gravity="center"
         android:text="@string/total_wrong_title"
         android:textColor="@android:color/holo_red_light"
+        android:textStyle="bold"
         android:textSize="25sp"
         android:layout_marginBottom="16dp"
         />

@@ -6,67 +6,67 @@
     android:layout_height="match_parent"
     tools:context=".GuessingActivity"
     android:id="@+id/layout"
-    android:background="@drawable/death2">
+    android:background="@drawable/ghost_port2">
 
     <TextView
         android:id="@+id/chancesLeft"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_gravity="center"
         android:gravity="center"
-        android:textColor="@android:color/white"
+
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="80dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
         android:text="@string/chances_left"
+        android:textColor="@android:color/white"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/guessAge"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.625" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/guessAge"
         android:layout_width="241dp"
         android:layout_height="138dp"
-        android:layout_marginHorizontal="15dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginEnd="16dp"
-        android:textColor="@android:color/white"
 
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="136dp"
+
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="16dp"
         android:gravity="center"
         android:hint="@string/hint_enter_guess"
         android:inputType="number"
         android:maxLines="1"
+        android:textColor="@android:color/white"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/buttonCheck"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.584"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chancesLeft"
+        app:layout_constraintVertical_bias="0.192" />
 
     <Button
         android:id="@+id/buttonCheck"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="30dp"
-        android:onClick="onCheckGuessClick"
 
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
+
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginBottom="72dp"
+        android:layout_marginBottom="120dp"
+        android:onClick="onCheckGuessClick"
         android:text="@string/check_guess"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
